@@ -19,9 +19,13 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 // Prompt user to make choices
 function getPasswordCriteria() {
   var userPasswordLength = prompt("How long would you like the password?");
-  while((userPasswordLength < 8) || (userPasswordLength > 126)) {
+
+  if(isNaN(userPasswordLength)) {
+    userPasswordLength = prompt("Please choose number.");
+  } if((userPasswordLength < 8) || (userPasswordLength > 126)) {
     userPasswordLength = prompt("Please enter a number between 7 and 127");} 
-    
+  
+  
 
   var userChooseNumbers = confirm("Do you want numbers in your password?");
   var userChooseUpperCase = confirm("Do you want upper case letters in your password?");
