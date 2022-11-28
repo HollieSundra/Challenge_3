@@ -10,7 +10,7 @@ function writePassword() {
   passwordText.value = password;
 }
 
-//Assignment Code
+//Arrays Created
 var numbers = ["0", "1", "3", "4", "5", "6", "7", "8", "9"];
 var symbols = ["*", "&", "$", "#", "@", "?", "^", "%", "!", "("];
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P"];
@@ -20,10 +20,10 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 function getPasswordCriteria() {
   var userPasswordLength = prompt("How long would you like the password?");
 
-  if(isNaN(userPasswordLength)) {
+  while(isNaN(userPasswordLength)) {
     userPasswordLength = prompt("Please choose number.");
-  } if((userPasswordLength < 8) || (userPasswordLength > 126)) {
-    userPasswordLength = prompt("Please enter a number between 7 and 127");} 
+  } while((userPasswordLength < 8) || (userPasswordLength > 128)) {
+    userPasswordLength = prompt("Please enter a number between 7 and 129.");} 
   
   
 
